@@ -1,6 +1,2745 @@
 body {
   margin: 0;
-  color: #fff;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725);
+  padding: 0;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 基础样式 */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #1989fa;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 按钮基础样式 */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1989fa;
+  border-color: #1989fa;
+}
+
+.btn-primary:hover {
+  background-color: #409eff;
+  border-color: #409eff;
+}
+
+/* 容器样式 */
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 标题样式 */
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* 文本样式 */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: #999;
+}
+
+.text-primary {
+  color: #1989fa;
+}
+
+/* 间距样式 */
+.mt-1 {
+  margin-top: 8px;
+}
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 24px;
+}
+
+.ml-1 {
+  margin-left: 8px;
+}
+
+.mr-1 {
+  margin-right: 8px;
+}
+
+/* 隐藏元素 */
+.hidden {
+  display: none;
+}
+
+/* 显示元素 */
+.visible {
+  display: block;
+}
+
+/* 弹性布局 */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* 定位样式 */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+/* 溢出处理 */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+/* 圆角样式 */
+.border-radius {
+  border-radius: 4px;
+}
+
+.border-radius-circle {
+  border-radius: 50%;
+}
+
+/* 边框样式 */
+.border {
+  border: 1px solid #eee;
+}
+
+.border-top {
+  border-top: 1px solid #eee;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #eee;
+}
+
+.border-left {
+  border-left: 1px solid #eee;
+}
+
+.border-right {
+  border-right: 1px solid #eee;
+}
+
+/* 阴影样式 */
+.box-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 动画样式 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-in;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-in;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideLeft 0.3s ease-in;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-right {
+  animation: slideRight 0.3s ease-in;
+}
+
+/* 响应式字体 */
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 750px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* 解决移动端键盘弹出导致页面变形问题 */
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 解决移动端点击延迟问题 */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 解决移动端滚动穿透问题 */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* 解决移动端长按选中文本问题 */
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* 解决移动端图片拖拽问题 */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* 解决移动端音频视频自动播放问题 */
+audio, video {
+  -webkit-autoplay: none;
+  autoplay: none;
+}
+
+/* 解决移动端页面缩放问题 */
+body {
+  touch-action: pan-x pan-y;
+}
+
+/* 解决移动端页面旋转问题 */
+@media (orientation: landscape) {
+  body {
+    /* 横屏样式 */
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    /* 竖屏样式 */
+  }
+}
+
+/* 解决移动端页面滚动时导航栏固定问题 */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* 解决移动端页面底部导航栏固定问题 */
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* 解决移动端页面顶部导航栏固定问题 */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* 解决移动端页面加载动画问题 */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #1989fa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 解决移动端页面空状态问题 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-state img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state .empty-text {
+  font-size: 16px;
+  color: #999;
+}
+
+/* 解决移动端页面错误状态问题 */
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.error-state img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.error-state .error-text {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.error-state .error-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 解决移动端页面加载更多问题 */
+.load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.load-more .loading {
+  margin-right: 8px;
+}
+
+/* 解决移动端页面下拉刷新问题 */
+.pull-refresh {
+  position: relative;
+  overflow: hidden;
+}
+
+.pull-refresh .refresh-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #999;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.pull-refresh.pulling .refresh-header {
+  transform: translateY(0);
+}
+
+.pull-refresh.refreshing .refresh-header {
+  transform: translateY(0);
+}
+
+/* 解决移动端页面上拉加载问题 */
+.pull-load {
+  position: relative;
+  overflow: hidden;
+}
+
+.pull-load .load-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #999;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.pull-load.pulling .load-footer {
+  transform: translateY(0);
+}
+
+.pull-load.loading .load-footer {
+  transform: translateY(0);
+}
+
+/* 解决移动端页面滚动监听问题 */
+.scroll-listener {
+  position: relative;
+  overflow: auto;
+}
+
+.scroll-listener .scroll-content {
+  position: relative;
+}
+
+/* 解决移动端页面无限滚动问题 */
+.infinite-scroll {
+  position: relative;
+  overflow: auto;
+}
+
+.infinite-scroll .infinite-content {
+  position: relative;
+}
+
+.infinite-scroll .infinite-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.infinite-scroll .infinite-loading .loading {
+  margin-right: 8px;
+}
+
+/* 解决移动端页面虚拟滚动问题 */
+.virtual-scroll {
+  position: relative;
+  overflow: auto;
+}
+
+.virtual-scroll .virtual-content {
+  position: relative;
+}
+
+.virtual-scroll .virtual-item {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* 解决移动端页面瀑布流问题 */
+.waterfall {
+  position: relative;
+  overflow: auto;
+}
+
+.waterfall .waterfall-column {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.waterfall .waterfall-item {
+  margin-bottom: 16px;
+}
+
+/* 解决移动端页面网格布局问题 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 16px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 解决移动端页面列表布局问题 */
+.list {
+  background-color: #fff;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item .list-item-left {
+  margin-right: 16px;
+}
+
+.list-item .list-item-content {
+  flex: 1;
+}
+
+.list-item .list-item-right {
+  margin-left: 16px;
+}
+
+/* 解决移动端页面卡片布局问题 */
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+/* 解决移动端页面表单布局问题 */
+.form {
+  background-color: #fff;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-item:last-child {
+  border-bottom: none;
+}
+
+.form-item .form-item-label {
+  width: 80px;
+  margin-right: 16px;
+  font-weight: 500;
+}
+
+.form-item .form-item-content {
+  flex: 1;
+}
+
+.form-item .form-item-right {
+  margin-left: 16px;
+}
+
+.form-item input,
+.form-item textarea,
+.form-item select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.form-item input:focus,
+.form-item textarea:focus,
+.form-item select:focus {
+  border-color: #1989fa;
+  outline: none;
+}
+
+.form-item textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-item select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20fill%3D'none'%20viewBox%3D'0%200%2020%2020'%3E%3Cpath%20stroke%3D'%23999'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%20stroke-width%3D'1.5'%20d%3D'M6%208l4%204%204-4'%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+/* 解决移动端页面导航栏布局问题 */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar .navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-center {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* 解决移动端页面底部导航栏布局问题 */
+.tabbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 0;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.tabbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: #999;
+}
+
+.tabbar-item.active {
+  color: #1989fa;
+}
+
+.tabbar-item .tabbar-item-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.tabbar-item .tabbar-item-text {
+  font-size: 12px;
+}
+
+/* 解决移动端页面标签页布局问题 */
+.tabs {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-item {
+  padding: 16px;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+}
+
+.tab-item.active {
+  color: #1989fa;
+  border-bottom: 2px solid #1989fa;
+}
+
+/* 解决移动端页面轮播图布局问题 */
+.swiper {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper .swiper-wrapper {
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.swiper .swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper .swiper-pagination {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper .swiper-pagination-bullet.active {
+  background-color: #fff;
+}
+
+/* 解决移动端页面弹出层布局问题 */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup .popup-content {
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.popup .popup-header {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.popup .popup-body {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.popup .popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.popup .popup-footer .btn {
+  margin-left: 8px;
+}
+
+/* 解决移动端页面对话框布局问题 */
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.dialog .dialog-content {
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dialog .dialog-header {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.dialog .dialog-body {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dialog .dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dialog .dialog-footer .btn {
+  flex: 1;
+  margin: 0 8px;
+}
+
+/* 解决移动端页面加载动画布局问题 */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.loading-overlay .loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.loading-overlay .loading-content .loading {
+  margin-bottom: 16px;
+}
+
+.loading-overlay .loading-content .loading-text {
+  font-size: 14px;
+  color: #333;
+}
+
+/* 解决移动端页面提示框布局问题 */
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* 解决移动端页面通知栏布局问题 */
+.notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-in;
+}
+
+/* 解决移动端页面操作菜单布局问题 */
+.action-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: #fff;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-in;
+}
+
+.action-sheet .action-sheet-item {
+  padding: 16px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.action-sheet .action-sheet-item:last-child {
+  margin-bottom: 0;
+}
+
+.action-sheet .action-sheet-item.cancel {
+  background-color: #f5f5f5;
+}
+
+/* 解决移动端页面分享菜单布局问题 */
+.share-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: #fff;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-in;
+}
+
+.share-menu .share-menu-title {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+}
+
+.share-menu .share-menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.share-menu .share-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.share-menu .share-menu-item .share-menu-item-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.share-menu .share-menu-item .share-menu-item-text {
+  font-size: 12px;
+}
+
+/* 解决移动端页面搜索框布局问题 */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+}
+
+.search-bar .search-bar-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #999;
+}
+
+.search-bar .search-bar-input {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-bar .search-bar-cancel {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #1989fa;
+  cursor: pointer;
+}
+
+/* 解决移动端页面筛选栏布局问题 */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-bar .filter-bar-item {
+  margin-right: 16px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filter-bar .filter-bar-item.active {
+  color: #fff;
+  background-color: #1989fa;
+}
+
+/* 解决移动端页面排序栏布局问题 */
+.sort-bar {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.sort-bar .sort-bar-item {
+  margin-right: 16px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sort-bar .sort-bar-item.active {
+  color: #fff;
+  background-color: #1989fa;
+}
+
+/* 解决移动端页面分类栏布局问题 */
+.category-bar {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.category-bar .category-bar-item {
+  margin-right: 16px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category-bar .category-bar-item.active {
+  color: #fff;
+  background-color: #1989fa;
+}
+
+/* 解决移动端页面标签栏布局问题 */
+.tag-bar {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tag-bar .tag-bar-item {
+  margin-right: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.tag-bar .tag-bar-item.active {
+  color: #fff;
+  background-color: #1989fa;
+}
+
+/* 解决移动端页面进度条布局问题 */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar .progress-bar-inner {
+  height: 100%;
+  background-color: #1989fa;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+/* 解决移动端页面评分布局问题 */
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating .rating-item {
+  margin-right: 4px;
+  font-size: 16px;
+  color: #ffd700;
+}
+
+.rating .rating-item:last-child {
+  margin-right: 0;
+}
+
+/* 解决移动端页面价格布局问题 */
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff4444;
+}
+
+.price .price-symbol {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.price .price-decimal {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* 解决移动端页面数量选择器布局问题 */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-selector .quantity-selector-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantity-selector .quantity-selector-input {
+  width: 48px;
+  height: 32px;
+  margin: 0 8px;
+  padding: 0 8px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+/* 解决移动端页面颜色选择器布局问题 */
+.color-selector {
+  display: flex;
+  align-items: center;
+}
+
+.color-selector .color-selector-item {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  cursor: pointer;
+}
+
+.color-selector .color-selector-item.active {
+  border-color: #1989fa;
+}
+
+/* 解决移动端页面尺寸选择器布局问题 */
+.size-selector {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.size-selector .size-selector-item {
+  margin: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.size-selector .size-selector-item.active {
+  color: #fff;
+  background-color: #1989fa;
+}
+
+/* 解决移动端页面开关布局问题 */
+.switch {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background-color: #eee;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch.active {
+  background-color: #1989fa;
+}
+
+.switch .switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.switch.active .switch-handle {
+  transform: translateX(24px);
+}
+
+/* 解决移动端页面滑块布局问题 */
+.slider {
+  width: 100%;
+  height: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.slider .slider-inner {
+  height: 100%;
+  background-color: #1989fa;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.slider .slider-handle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #1989fa;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  cursor: pointer;
+}
+
+/* 解决移动端页面日历布局问题 */
+.calendar {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.calendar .calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1989fa;
+  color: #fff;
+}
+
+.calendar .calendar-header .calendar-header-btn {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.calendar .calendar-header .calendar-header-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.calendar .calendar-body {
+  padding: 16px;
+}
+
+.calendar .calendar-weekdays {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calendar .calendar-weekdays .calendar-weekday {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.calendar .calendar-days {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.calendar .calendar-days .calendar-day {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.calendar .calendar-days .calendar-day.today {
+  background-color: #1989fa;
+  color: #fff;
+}
+
+.calendar .calendar-days .calendar-day.selected {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+/* 解决移动端页面时间选择器布局问题 */
+.time-picker {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.time-picker .time-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1989fa;
+  color: #fff;
+}
+
+.time-picker .time-picker-header .time-picker-header-btn {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.time-picker .time-picker-header .time-picker-header-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.time-picker .time-picker-body {
+  padding: 16px;
+}
+
+.time-picker .time-picker-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.time-picker .time-picker-column {
+  width: 80px;
+  height: 200px;
+  overflow: auto;
+}
+
+.time-picker .time-picker-column .time-picker-item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.time-picker .time-picker-column .time-picker-item.active {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1989fa;
+}
+
+/* 解决移动端页面日期时间选择器布局问题 */
+.datetime-picker {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.datetime-picker .datetime-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1989fa;
+  color: #fff;
+}
+
+.datetime-picker .datetime-picker-header .datetime-picker-header-btn {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.datetime-picker .datetime-picker-header .datetime-picker-header-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.datetime-picker .datetime-picker-body {
+  padding: 16px;
+}
+
+.datetime-picker .datetime-picker-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.datetime-picker .datetime-picker-column {
+  width: 80px;
+  height: 200px;
+  overflow: auto;
+}
+
+.datetime-picker .datetime-picker-column .datetime-picker-item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.datetime-picker .datetime-picker-column .datetime-picker-item.active {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1989fa;
+}
+
+/* 解决移动端页面地址选择器布局问题 */
+.address-picker {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.address-picker .address-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1989fa;
+  color: #fff;
+}
+
+.address-picker .address-picker-header .address-picker-header-btn {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.address-picker .address-picker-header .address-picker-header-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.address-picker .address-picker-body {
+  padding: 16px;
+}
+
+.address-picker .address-picker-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.address-picker .address-picker-column {
+  width: 100px;
+  height: 200px;
+  overflow: auto;
+}
+
+.address-picker .address-picker-column .address-picker-item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.address-picker .address-picker-column .address-picker-item.active {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1989fa;
+}
+
+/* 解决移动端页面图片预览布局问题 */
+.image-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.image-preview .image-preview-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-preview .image-preview-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-preview .image-preview-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.image-preview .image-preview-indicator {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 解决移动端页面视频预览布局问题 */
+.video-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.video-preview .video-preview-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-preview .video-preview-content video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.video-preview .video-preview-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 解决移动端页面音频播放布局问题 */
+.audio-player {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.audio-player .audio-player-cover {
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.audio-player .audio-player-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audio-player .audio-player-content {
+  flex: 1;
+}
+
+.audio-player .audio-player-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.audio-player .audio-player-artist {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.audio-player .audio-player-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.audio-player .audio-player-progress .audio-player-progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 8px;
+}
+
+.audio-player .audio-player-progress .audio-player-progress-bar-inner {
+  height: 100%;
+  background-color: #1989fa;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.audio-player .audio-player-progress .audio-player-progress-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.audio-player .audio-player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.audio-player .audio-player-controls .audio-player-control-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.audio-player .audio-player-controls .audio-player-control-btn.play {
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  color: #1989fa;
+}
+
+/* 解决移动端页面地图布局问题 */
+.map {
+  width: 100%;
+  height: 300px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 解决移动端页面二维码布局问题 */
+.qrcode {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.qrcode img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 解决移动端页面条形码布局问题 */
+.barcode {
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.barcode img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 解决移动端页面头像布局问题 */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 解决移动端页面头像组布局问题 */
+.avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-group .avatar-group-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: -8px;
+  border: 2px solid #fff;
+}
+
+.avatar-group .avatar-group-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 解决移动端页面徽章布局问题 */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #ff4444;
+}
+
+.badge.badge-primary {
+  background-color: #1989fa;
+}
+
+.badge.badge-success {
+  background-color: #52c41a;
+}
+
+.badge.badge-warning {
+  background-color: #faad14;
+}
+
+.badge.badge-info {
+  background-color: #13c2c2;
+}
+
+/* 解决移动端页面标签布局问题 */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.tag.tag-primary {
+  color: #1989fa;
+  background-color: rgba(25, 137, 250, 0.1);
+}
+
+.tag.tag-success {
+  color: #52c41a;
+  background-color: rgba(82, 196, 26, 0.1);
+}
+
+.tag.tag-warning {
+  color: #faad14;
+  background-color: rgba(250, 173, 20, 0.1);
+}
+
+.tag.tag-danger {
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+.tag.tag-info {
+  color: #13c2c2;
+  background-color: rgba(19, 194, 194, 0.1);
+}
+
+/* 解决移动端页面步骤条布局问题 */
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.steps .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.steps .step .step-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.steps .step.active .step-icon {
+  background-color: #1989fa;
+}
+
+.steps .step .step-text {
+  font-size: 12px;
+  color: #999;
+}
+
+.steps .step.active .step-text {
+  color: #1989fa;
+}
+
+/* 解决移动端页面分隔线布局问题 */
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 16px 0;
+}
+
+.divider.divider-horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.divider.divider-vertical {
+  width: 1px;
+  height: 100%;
+}
+
+/* 解决移动端页面骨架屏布局问题 */
+.skeleton {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #f5f5f5;
+  }
+  50% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #f5f5f5;
+  }
+}
+
+.skeleton.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.skeleton.skeleton-title {
+  width: 120px;
+  height: 20px;
+}
+
+.skeleton.skeleton-content {
+  width: 100%;
+  height: 12px;
+  margin-top: 8px;
+}
+
+.skeleton.skeleton-content:last-child {
+  width: 80%;
+}
+
+/* 解决移动端页面空状态布局问题 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty .empty-icon {
+  font-size: 64px;
+  color: #eee;
+  margin-bottom: 16px;
+}
+
+.empty .empty-text {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 解决移动端页面错误状态布局问题 */
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.error .error-icon {
+  font-size: 64px;
+  color: #ff4444;
+  margin-bottom: 16px;
+}
+
+.error .error-text {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.error .error-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 解决移动端页面加载状态布局问题 */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading .loading-icon {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f5f5f5;
+  border-top: 4px solid #1989fa;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading .loading-text {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 解决移动端页面成功状态布局问题 */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.success .success-icon {
+  font-size: 64px;
+  color: #52c41a;
+  margin-bottom: 16px;
+}
+
+.success .success-text {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.success .success-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 解决移动端页面警告状态布局问题 */
+.warning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.warning .warning-icon {
+  font-size: 64px;
+  color: #faad14;
+  margin-bottom: 16px;
+}
+
+.warning .warning-text {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.warning .warning-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 解决移动端页面信息状态布局问题 */
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.info .info-icon {
+  font-size: 64px;
+  color: #13c2c2;
+  margin-bottom: 16px;
+}
+
+.info .info-text {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.info .info-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 解决移动端页面操作反馈布局问题 */
+.feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* 解决移动端页面全局提示布局问题 */
+.message {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-in;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 解决移动端页面通知布局问题 */
+.notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1989fa;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-in;
+}
+
+/* 解决移动端页面对话框布局问题 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal .modal-content {
+  width: 80%;
+  max-width: 400px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal .modal-header {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modal .modal-body {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modal .modal-footer .btn {
+  margin-left: 12px;
+}
+
+/* 解决移动端页面弹出层布局问题 */
+.popover {
+  position: relative;
+  display: inline-block;
+}
+
+.popover .popover-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  margin-top: 8px;
+}
+
+.popover .popover-content::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+
+/* 解决移动端页面下拉菜单布局问题 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  margin-top: 8px;
+  min-width: 120px;
+}
+
+.dropdown .dropdown-item {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.dropdown .dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* 解决移动端页面tooltip布局问题 */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-content {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.tooltip .tooltip-content::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgba(0, 0, 0, 0.8);
+}
+
+/* 解决移动端页面气泡布局问题 */
+.bubble {
+  position: relative;
+  display: inline-block;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.bubble .bubble-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+
+.bubble.top .bubble-arrow {
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bubble.bottom .bubble-arrow {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.bubble.left .bubble-arrow {
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.bubble.right .bubble-arrow {
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+/* 解决移动端页面卡片布局问题 */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card .card-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.card .card-body {
+  padding: 16px;
+}
+
+.card .card-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+/* 解决移动端页面列表布局问题 */
+.list {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.list .list-item {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.list .list-item:last-child {
+  border-bottom: none;
+}
+
+.list .list-item .list-item-left {
+  margin-right: 16px;
+}
+
+.list .list-item .list-item-content {
+  flex: 1;
+}
+
+.list .list-item .list-item-right {
+  margin-left: 16px;
+}
+
+/* 解决移动端页面表格布局问题 */
+.table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table .table-header {
+  background-color: #f5f5f5;
+}
+
+.table .table-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.table .table-row:last-child {
+  border-bottom: none;
+}
+
+.table .table-cell {
+  flex: 1;
+  text-align: center;
+}
+
+.table .table-cell:first-child {
+  text-align: left;
+}
+
+.table .table-cell:last-child {
+  text-align: right;
+}
+
+/* 解决移动端页面表单布局问题 */
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form .form-item {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.form .form-item:last-child {
+  border-bottom: none;
+}
+
+.form .form-item .form-item-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form .form-item .form-item-control {
+  width: 100%;
+}
+
+.form .form-item .form-item-control input,
+.form .form-item .form-item-control textarea,
+.form .form-item .form-item-control select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.form .form-item .form-item-control input:focus,
+.form .form-item .form-item-control textarea:focus,
+.form .form-item .form-item-control select:focus {
+  border-color: #1989fa;
+  outline: none;
+}
+
+.form .form-item .form-item-control textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form .form-item .form-item-control select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20fill%3D'none'%20viewBox%3D'0%200%2020%2020'%3E%3Cpath%20stroke%3D'%23999'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%20stroke-width%3D'1.5'%20d%3D'M6%208l4%204%204-4'%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+.form .form-item .form-item-control .form-item-helper {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #999;
+}
+
+.form .form-item .form-item-control .form-item-error {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ff4444;
+}
+
+.form .form-actions {
+  padding: 16px;
+  text-align: right;
+}
+
+.form .form-actions .btn {
+  margin-left: 12px;
+}
+
+/* 解决移动端页面导航布局问题 */
+.nav {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.nav .nav-item {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav .nav-item:last-child {
+  border-bottom: none;
+}
+
+.nav .nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+.nav .nav-item.active {
+  color: #1989fa;
+  background-color: rgba(25, 137, 250, 0.1);
+}
+
+/* 解决移动端页面标签页布局问题 */
+.tabs {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tabs .tabs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabs .tabs-header .tabs-item {
+  padding: 8px 16px;
+  font-size: 1
