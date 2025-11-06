@@ -1,0 +1,120 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 自定义重置样式 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #333;
+}
+
+/* 解决移动端点击高亮问题 */
+a, button, input, textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 解决移动端输入框样式问题 */
+input, textarea, button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+/* 解决图片缩放问题 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 解决iOS下滚动不流畅问题 */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* 解决部分浏览器默认按钮样式 */
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* 解决iOS下input placeholder居中问题 */
+input::-webkit-input-placeholder {
+  text-align: left;
+}
+
+/* 解决Android下input placeholder颜色问题 */
+input::-webkit-input-placeholder {
+  color: #999;
+}
+input:-moz-placeholder {
+  color: #999;
+}
+input::-moz-placeholder {
+  color: #999;
+}
+input:-ms-input-placeholder {
+  color: #999;
+}
